@@ -30,5 +30,17 @@ class Sprite:
 
     def get_geometry(self):
         return f'{self.image_resolution}+{self.x}+{self.y}'
+    
+    def set_x(self, x: int):
+        self.x = x
+
+    def set_y(self, y: int):
+        self.y = y
+
+    def set_vx(self, vx: int):
+        self.vx = vx
+
+    def set_vy(self, vy: int):
+        self.vy = vy
 
 
