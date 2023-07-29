@@ -10,8 +10,8 @@ class Window:
     current_sprite_index: int
     label: tk.Label
 
-    def __init__(self):
-        self.root = tk.Tk()
+    def __init__(self, root):
+        self.root = root
         self.label = tk.Label(self.root)
         self.current_sprite_index = 0
 
@@ -32,7 +32,7 @@ class Window:
     def mainloop(self):
         self.label.pack()
         self.root.after(0, self.update, 0)
-        self.root.mainloop()
+        # self.root.mainloop()
 
     def set_current_sprite(self, index: int):
         if index < len(self.sprites):
