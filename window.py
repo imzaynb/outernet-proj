@@ -1,10 +1,12 @@
 import tkinter as tk
 
 from sprites import Sprite
+from typing import List
+from sys import platform
 
 class Window:
     root: tk.Tk
-    sprites = list[Sprite]
+    sprites = List[Sprite]
     current_sprite_index: int
     label: tk.Label
 
@@ -17,7 +19,11 @@ class Window:
 
         self.root.config(highlightbackground='black')
         self.root.overrideredirect(True)
-        self.root.wm_attributes('-transparentcolor','black')
+        if platform == "win32":
+            self.root.wm_attributes('-transparentcolor','black')
+        else:
+            self.root.wait_visibility(self.root)
+            self.root.attributes('-alpha', 0.9)
 
     def add_sprite(self, sprite: Sprite):
         self.sprites.append(sprite)

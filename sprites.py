@@ -1,8 +1,8 @@
 import tkinter as tk
-
+from typing import List
 
 class Sprite:
-    frames: list[tk.PhotoImage]
+    frames: List[tk.PhotoImage]
     frame_count: int
 
     image_path: str
