@@ -13,3 +13,4 @@ pyscreenshot==3.1
 PyScreeze==0.1.29
 python3-xlib==0.15
 pytweening==1.0.7
+black==23.7.0
