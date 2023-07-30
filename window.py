@@ -18,6 +18,8 @@ class Window:
         self.root.config(highlightbackground='black')
         self.root.overrideredirect(True)
         self.root.wm_attributes('-transparentcolor','black')
+        self.root.attributes('-topmost', True)
+        self.root.config(cursor="none")
 
     def add_sprite(self, sprite: Sprite):
         self.sprites.append(sprite)
@@ -44,8 +46,8 @@ class Window:
         self.root.geometry(current_sprite.get_geometry())
         self.label.configure(image=frame)
         
-        current_sprite.update_sprite()
-        self.root.after(100, self.update, index)
+        current_sprite.update_sprite_to_mouse()
+        self.root.after(50, self.update, index)
 
         
 
