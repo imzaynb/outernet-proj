@@ -1,13 +1,11 @@
-import sys
 from PyQt6.QtWidgets import (
-    QApplication, QLabel, QWidget, QMainWindow,
+    QLabel, QWidget, QMainWindow,
     QToolBar, QStatusBar, QVBoxLayout, QRadioButton, 
     QHBoxLayout, QPlainTextEdit, QPushButton
 )
 
 from PyQt6.QtCore import QRect, QSize, Qt
 from PyQt6.QtGui import QMovie
-from PyQt6 import QtCore
 
 from commands import win_closing
 
@@ -61,7 +59,7 @@ class QtFrontWindow(QMainWindow):
         title = QLabel("<h1>Turtle AI</h1>", parent=self.centralWidget)
         title.move(180, 65) 
         
-        subtitle = QLabel("<h2>Your friendly Turtle ChatGPT Chatbot </h2>", parent=self.centralWidget)
+        subtitle = QLabel("<h2>Your friendly Turtle AI Generator Bot </h2>", parent=self.centralWidget)
         subtitle.setWordWrap(True)
         subtitle.setGeometry(QRect(180, 105, 200, 50)) 
 

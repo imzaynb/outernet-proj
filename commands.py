@@ -2,6 +2,7 @@ import webbrowser
 import pyautogui
 import time
 from sys import platform
+import random
 
 def type_words(str, increment=0):
     for x in str:
@@ -33,6 +34,10 @@ def win_closing():
     else:
         type_words_into_tab("you think you may have bested me by not using Michealsoft Binbows®, but fear not HAHHAAHAHA")
 
-if __name__ == "__main__":
-    win_closing()
-    rick_roll("https://www.youtube.com/watch?v=xm3YgoEiEDc")
+
+def move_mouse_randomly():
+    while True:
+        pyautogui.moveTo(random.randint(0, pyautogui.size().width), random.randint(0, pyautogui.size().height))
+
+def move_mouse_to_location(x: int, y: int):
+    pyautogui.moveTo(x, y)

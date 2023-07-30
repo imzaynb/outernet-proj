@@ -19,8 +19,8 @@ def ms_paint():
     time.sleep(3)
 
     # Send the Alt + Space keys to open the window's system menu
-    pyautogui.hotkey('alt', 'space')
-    time.sleep(0.5)
+    # pyautogui.hotkey('alt', 'space')    
+    # time.sleep(0.5)
 
     # Send the 'x' key to maximize the window (toggle full screen)
     pyautogui.press('x')
@@ -44,42 +44,47 @@ def ms_paint():
     pyautogui.click()
 
     # Draw the second circle
-    draw_circle(400, 510, 50)
+    draw_circle(510, 400, 50)
 
     # Move to draw the second circle (40 pixels below the first circle)
     pyautogui.moveRel(0, 40, duration=0.5)
 
     pyautogui.click()
 
-    # Move to draw the oval between the circles
-    pyautogui.moveTo(325, 420, duration=0.5)
-
-    # Draw the oval between the circles
-    draw_oval(325, 440, 400, 80)
-
     # Click out of the oval
-    pyautogui.moveRel(100, 100)
-    pyautogui.click()
-
-    # Select the text box tool
-    for i in range(15):
+    for i in range(20):
         pyautogui.press('tab')
-        time.sleep(0.1)
+
+    pyautogui.press('left')
     pyautogui.press('enter')
 
-    # Draws the textbox
-    draw_oval(325, 440, 400, 80)
+    pyautogui.moveTo(300, 550, duration=0.5)
+    pyautogui.dragRel(310, 0, duration=0.5)
+    pyautogui.moveRel(-155, 0, duration=0.5)
+    pyautogui.dragRel(0, 50, duration=0.5)
 
-    # Changes the font size
-    pos = pyautogui.position()
-    pyautogui.click(828, 221)
-    pyautogui.write("32")
+    # pyautogui.moveRel(100, 100)
+    # pyautogui.click()
 
-    # Types the message
-    pyautogui.moveTo(pos)
-    pyautogui.moveRel(-50, -50)
-    pyautogui.click()
-    pyautogui.write("Test text")
+    # # Select the text box tool
+    # for i in range(15):
+    #     pyautogui.press('tab')
+    #     time.sleep(0.1)
+    # pyautogui.press('enter')
+
+    # # Draws the textbox
+    # draw_oval(325, 440, 400, 80)
+
+    # # Changes the font size
+    # pos = pyautogui.position()
+    # pyautogui.click(828, 221)
+    # pyautogui.write("32")
+
+    # # Types the message
+    # pyautogui.moveTo(pos)
+    # pyautogui.moveRel(-50, -50)
+    # pyautogui.click()
+    # pyautogui.write("Test text")
 
 if __name__ == "__main__":
     ms_paint()
