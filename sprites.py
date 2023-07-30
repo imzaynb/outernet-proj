@@ -1,9 +1,10 @@
 import tkinter as tk
 import pyautogui
+from typing import List
 
 
 class Sprite:
-    frames: list[tk.PhotoImage]
+    frames: List[tk.PhotoImage]
     frame_count: int
 
     image_path: str
