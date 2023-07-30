@@ -8,7 +8,7 @@ from initial_gui import QtFrontWindow
 import sys
 from PyQt6.QtWidgets import QApplication
 from text import ms_paint
-
+from blockinput import block_keyboard, block_mouse, enable_keyboard, enable_mouse
 
 HAPPY_TURTLE_INDEX: int = 0
 TAUNTING_TURTLE_INDEX: int = 1
@@ -33,6 +33,7 @@ def main():
         window.add_sprite(knife_turtle)
 
         commands = [
+            functools.partial(block_mouse),
             functools.partial(move_mouse_to_location, 500, 500),
             functools.partial(window.set_current_sprite, SUPER_SAIYAN_TURTLE_INDEX),
             functools.partial(time.sleep, 3),
@@ -41,7 +42,9 @@ def main():
             functools.partial(type_words_into_tab, "google.com", "MEANWHILE IMMA HAVE SOME FUN:))"),
             functools.partial(super_saiyan_turtle.set_offset_x,0),
             functools.partial(super_saiyan_turtle.set_offset_y,0),
+            functools.partial(enable_mouse),
             functools.partial(ms_paint),
+            functools.partial(block_mouse),
             functools.partial(super_saiyan_turtle.set_offset_x,50),
             functools.partial(super_saiyan_turtle.set_offset_y,50),
             functools.partial(move_mouse_to_location, 500, 500),
