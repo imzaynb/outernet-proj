@@ -9,8 +9,6 @@ from PyQt6.QtWidgets import QApplication
 
 def main():
     # Run the other Python file using subprocess
-    # subprocess.run(["python", "window-closing.py"])
-    # subprocess.run(["python", "window-messing.py"])
     # Now continue with the rest of the code
     def submitButtonCommand():
         win_closing() 
