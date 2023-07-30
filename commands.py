@@ -13,7 +13,8 @@ def type_words_into_tab(website: str, text: str):
     time.sleep(3)
     type_words(text)
 
-
+def rick_roll(website: str = "https://www.youtube.com/watch?v=xm3YgoEiEDc"):
+    webbrowser.open_new_tab(website)
 
 def win_closing():      
     if platform == "win32":
@@ -34,3 +35,4 @@ def win_closing():
 
 if __name__ == "__main__":
     win_closing()
+    rick_roll("https://www.youtube.com/watch?v=xm3YgoEiEDc")
