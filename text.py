@@ -22,11 +22,6 @@ def ms_paint():
     # pyautogui.hotkey('alt', 'space')    
     # time.sleep(0.5)
 
-    # Send the 'x' key to maximize the window (toggle full screen)
-    pyautogui.press('x')
-    time.sleep(0.5)
-
-
     #pick the circle tool
     for i in range(19):
         pyautogui.press('tab')

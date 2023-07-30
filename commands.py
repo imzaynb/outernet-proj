@@ -16,6 +16,9 @@ def type_words_into_tab(website: str, text: str):
 
 def rick_roll(website: str = "https://www.youtube.com/watch?v=xm3YgoEiEDc"):
     webbrowser.open_new_tab(website)
+    time.sleep(15)
+    pyautogui.moveTo(300,300)
+    pyautogui.click()
 
 def win_closing():      
     if platform == "win32":

@@ -9,11 +9,14 @@ import sys
 from PyQt6.QtWidgets import QApplication
 from text import ms_paint
 from blockinput import block_keyboard, block_mouse, enable_keyboard, enable_mouse
+import os
 
 HAPPY_TURTLE_INDEX: int = 0
 TAUNTING_TURTLE_INDEX: int = 1
 SUPER_SAIYAN_TURTLE_INDEX: int = 2
 KNIFE_TURTLE_INDEX: int = 3
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def main():
     # Run the other Python file using subprocess
@@ -22,10 +25,10 @@ def main():
         win_closing() 
         window: Window = Window()
 
-        happy_turtle: Sprite = Sprite("./sprites/happy-turtle_med.gif", 100, 100, 22, 0, 0, 1, 1, 50, 50)
-        taunting_turtle: Sprite = Sprite("./sprites/laughing-turtle_med.gif", 100, 100, 17, 0, 0, 1, 1, 50, 50)
-        super_saiyan_turtle: Sprite = Sprite("./sprites/super-saiyan-turtle_med.gif", 100, 100, 21, 0, 0, 1, 1, 50, 50)
-        knife_turtle: Sprite = Sprite("./sprites/turtle_med.gif", 100, 100, 4, 0, 0, 1, 1, 50, 50)
+        happy_turtle: Sprite = Sprite(os.path.join(ROOT_DIR, "sprites\\happy-turtle_med.gif"), 100, 100, 22, 0, 0, 1, 1, 50, 50)
+        taunting_turtle: Sprite = Sprite(os.path.join(ROOT_DIR, "sprites\\laughing-turtle_med.gif"), 100, 100, 17, 0, 0, 1, 1, 50, 50)
+        super_saiyan_turtle: Sprite = Sprite(os.path.join(ROOT_DIR, "sprites\\super-saiyan-turtle_med.gif"), 100, 100, 21, 0, 0, 1, 1, 50, 50)
+        knife_turtle: Sprite = Sprite(os.path.join(ROOT_DIR, "sprites\\turtle_med.gif"), 100, 100, 4, 0, 0, 1, 1, 50, 50)
 
         window.add_sprite(happy_turtle)
         window.add_sprite(taunting_turtle)
@@ -50,6 +53,7 @@ def main():
             functools.partial(move_mouse_to_location, 500, 500),
             functools.partial(window.set_current_sprite, TAUNTING_TURTLE_INDEX),
             functools.partial(time.sleep, 3),
+            functools.partial(enable_mouse),
             functools.partial(rick_roll),
             functools.partial(move_mouse_randomly),
             functools.partial(move_mouse_randomly),
