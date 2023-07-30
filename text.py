@@ -11,7 +11,7 @@ def draw_oval(x, y, width, height):
     pyautogui.dragRel(width, height, duration=0.5)  # Draw the oval's right side
 
 
-def main():
+def ms_paint():
     # Open Paint using the 'mspaint' command in the background
     subprocess.Popen(['mspaint'], shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -82,4 +82,4 @@ def main():
     pyautogui.write("Test text")
 
 if __name__ == "__main__":
-    main()
+    ms_paint()
